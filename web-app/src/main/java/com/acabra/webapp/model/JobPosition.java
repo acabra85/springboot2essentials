@@ -3,9 +3,9 @@ package com.acabra.webapp.model;
 import java.util.List;
 
 public enum JobPosition {
-    HOUSE_KEEPING(0), CONCIERGE(1), FRONT_DESK(2), SECURITY(3);
+    HOUSEKEEPING(0), CONCIERGE(1), FRONT_DESK(2), SECURITY(3);
 
-    private static final List<JobPosition> positions = List.of(HOUSE_KEEPING, CONCIERGE, FRONT_DESK, SECURITY);
+    private static final List<JobPosition> positions = List.of(HOUSEKEEPING, CONCIERGE, FRONT_DESK, SECURITY);
 
 
     private final int id;

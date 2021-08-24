@@ -18,5 +18,4 @@ public class RoomService {
     public List<Room> getAllRooms() {
         return roomRepository.findAll();
     }
-
 }

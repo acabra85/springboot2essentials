@@ -1,17 +1,35 @@
 package com.acabra.webapp.model;
 
+import javax.persistence.*;
+import java.util.UUID;
+
+@Entity
+@Table(name="EMPLOYEE")
 public class Employee {
 
+    @Id
+    @Column(name = "EMPLOYEE_ID")
     private String id;
-    private String firstName;
-    private String lastName;
-    private String position;
 
-    public Employee(String id, String name, String lastName, String position) {
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+
+    @Column(name = "POSITION")
+    @Enumerated(EnumType.STRING)
+    private JobPosition position;
+
+    public Employee(String id, String name, String lastName, JobPosition position) {
         this.id = id;
         this.firstName = name;
         this.lastName = lastName;
         this.position = position;
+    }
+
+    public Employee() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getId() {
@@ -38,11 +56,11 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getPosition() {
+    public JobPosition getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(JobPosition position) {
         this.position = position;
     }
 }

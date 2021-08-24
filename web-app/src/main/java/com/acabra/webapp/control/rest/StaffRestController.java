@@ -18,7 +18,7 @@ public class StaffRestController {
     }
 
     @GetMapping
-    private List<Employee> getAllStaff(StaffService staffService) {
+    private List<Employee> getAllStaff() {
         return staffService.getAllStaff();
     }
 }
