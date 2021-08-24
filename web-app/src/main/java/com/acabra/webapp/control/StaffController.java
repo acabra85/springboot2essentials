@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StaffController {
 
     final StaffService staffService;
+    static final String TEMPLATE_NAME = "staff";
 
     public StaffController(StaffService staffService) {
         this.staffService = staffService;
@@ -18,7 +19,7 @@ public class StaffController {
 
     @GetMapping
     String getStaff(Model model) {
-        model.addAttribute("staff", staffService.getAllStaff());
-        return "staff";
+        model.addAttribute(TEMPLATE_NAME, staffService.getAllStaff());
+        return TEMPLATE_NAME;
     }
 }

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RoomController {
 
     private final RoomService roomService;
+    static final String TEMPLATE_NAME = "rooms";
+
 
     public RoomController(RoomService roomService) {
         this.roomService = roomService;
@@ -18,7 +20,7 @@ public class RoomController {
 
     @GetMapping
     public String getAllRooms(Model model) {
-        model.addAttribute("rooms", roomService.getAllRooms());
-        return "rooms"; //template name
+        model.addAttribute(TEMPLATE_NAME, roomService.getAllRooms());
+        return TEMPLATE_NAME; //template name
     }
 }
