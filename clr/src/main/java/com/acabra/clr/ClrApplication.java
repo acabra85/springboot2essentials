@@ -28,16 +28,28 @@ public class ClrApplication {
     }
 
     @Bean
-    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+    public CommandLineRunner run(final RestTemplate rTemplate) throws Exception {
         return args -> {
             logger.info("Starting CLI ...");
 
             logger.info("FizzBuzz ...");
             fizzBuzz();
             logger.info("Rooms ...");
-            rooms(restTemplate);
+            rooms(rTemplate);
+            logger.info("Staff...");
+            staff(rTemplate);
             logger.info("Finishing CLI ...");
         };
+    }
+
+    private void staff(RestTemplate rTemplate) {
+        final HttpHeaders headers =  new HttpHeaders(){{
+            setAccept(List.of(MediaType.APPLICATION_JSON));
+        }};
+        ResponseEntity<List<EmployeeCLI>> rooms = rTemplate.exchange("http://localhost:9000/api/staff",
+                HttpMethod.GET, new HttpEntity<>("body", headers), new ParameterizedTypeReference<List<EmployeeCLI>>() {
+                });
+        rooms.getBody().forEach(room -> logger.info("room: {}", room.toString()));
     }
 
     private void fizzBuzz() {
@@ -62,8 +74,8 @@ public class ClrApplication {
         final HttpHeaders headers =  new HttpHeaders(){{
             setAccept(List.of(MediaType.APPLICATION_JSON));
         }};
-        ResponseEntity<List<HotelRoom>> rooms = restTemplate.exchange("http://localhost:9000/api/rooms",
-                HttpMethod.GET, new HttpEntity<>("body", headers), new ParameterizedTypeReference<List<HotelRoom>>() {
+        ResponseEntity<List<HotelCLI>> rooms = restTemplate.exchange("http://localhost:9000/api/rooms",
+                HttpMethod.GET, new HttpEntity<>("body", headers), new ParameterizedTypeReference<List<HotelCLI>>() {
                 });
         rooms.getBody().forEach(room -> logger.info("room: {}", room.toString()));
     }

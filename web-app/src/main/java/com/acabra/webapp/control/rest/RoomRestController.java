@@ -18,7 +18,7 @@ public class RoomRestController {
     }
 
     @GetMapping
-    private List<Room> getAllRooms(RoomService roomService) {
+    private List<Room> getAllRooms() {
         return roomService.getAllRooms();
     }
 }

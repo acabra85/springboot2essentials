@@ -1,19 +1,19 @@
 package com.acabra.clr;
 
-public class HotelRoom {
+public class HotelCLI {
     private long id;
     private String number;
     private String name;
     private String bedInfo;
 
-    public HotelRoom(long id, String number, String name, String info) {
+    public HotelCLI(long id, String number, String name, String info) {
         this.id = id;
         this.number = number;
         this.name = name;
         this.bedInfo = info;
     }
 
-    public HotelRoom() {
+    public HotelCLI() {
     }
 
     public long getId() {

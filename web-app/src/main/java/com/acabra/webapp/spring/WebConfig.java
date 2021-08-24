@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @Configuration
-@ComponentScan({"com.acabra.webapp.control"})
+@ComponentScan({"com.acabra.webapp.control", "com.acabra.webapp.control.rest"})
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendMessageConverters(final List<HttpMessageConverter<?>> converters) {

@@ -1,24 +1,22 @@
 package com.acabra.webapp.service;
 
 import com.acabra.webapp.model.Room;
+import com.acabra.webapp.model.data.RoomRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 @Service
 public class RoomService {
 
-    private static final List<Room> rooms = new ArrayList<>();
+    private final RoomRepository roomRepository;
 
-    static {
-        IntStream.range(0, 10)
-            .forEach(i -> rooms.add(new Room(i, "R" + i, "name:" + i, "some info:" + i)));
+    public RoomService(RoomRepository roomRepository) {
+        this.roomRepository = roomRepository;
     }
 
     public List<Room> getAllRooms() {
-        return rooms;
+        return roomRepository.findAll();
     }
 
 }
