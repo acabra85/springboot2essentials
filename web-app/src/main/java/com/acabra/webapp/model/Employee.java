@@ -3,13 +3,13 @@ package com.acabra.webapp.model;
 public class Employee {
 
     private String id;
-    private String name;
+    private String firstName;
     private String lastName;
     private String position;
 
     public Employee(String id, String name, String lastName, String position) {
         this.id = id;
-        this.name = name;
+        this.firstName = name;
         this.lastName = lastName;
         this.position = position;
     }
@@ -22,12 +22,12 @@ public class Employee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
