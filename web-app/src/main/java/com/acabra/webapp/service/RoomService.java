@@ -1,7 +1,7 @@
 package com.acabra.webapp.service;
 
 import com.acabra.webapp.model.Room;
-import com.acabra.webapp.model.data.RoomRepository;
+import com.acabra.webapp.data.RoomRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.acabra.webapp.model.data;
+package com.acabra.webapp.data;
 
 import com.acabra.webapp.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;

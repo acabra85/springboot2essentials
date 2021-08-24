@@ -1,7 +1,7 @@
 package com.acabra.webapp.service;
 
 import com.acabra.webapp.model.Employee;
-import com.acabra.webapp.model.data.StaffRepository;
+import com.acabra.webapp.data.StaffRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
