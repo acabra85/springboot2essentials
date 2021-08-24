@@ -31,8 +31,11 @@ public class ClrApplication {
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
             logger.info("Starting CLI ...");
+
+            logger.info("FizzBuzz ...");
             fizzBuzz();
-            //rooms(restTemplate);
+            logger.info("Rooms ...");
+            rooms(restTemplate);
             logger.info("Finishing CLI ...");
         };
     }

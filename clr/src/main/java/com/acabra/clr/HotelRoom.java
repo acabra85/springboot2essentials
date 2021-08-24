@@ -4,13 +4,13 @@ public class HotelRoom {
     private long id;
     private String number;
     private String name;
-    private String info;
+    private String bedInfo;
 
     public HotelRoom(long id, String number, String name, String info) {
         this.id = id;
         this.number = number;
         this.name = name;
-        this.info = info;
+        this.bedInfo = info;
     }
 
     public HotelRoom() {
@@ -28,8 +28,8 @@ public class HotelRoom {
         return name;
     }
 
-    public String getInfo() {
-        return info;
+    public String getBedInfo() {
+        return bedInfo;
     }
 
     public void setId(long id) {
@@ -44,8 +44,8 @@ public class HotelRoom {
         this.name = name;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setBedInfo(String bedInfo) {
+        this.bedInfo = bedInfo;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class HotelRoom {
                 "id=" + id +
                 ", number='" + number + '\'' +
                 ", name='" + name + '\'' +
-                ", info='" + info + '\'' +
+                ", bed info='" + bedInfo + '\'' +
                 '}';
     }
 }
