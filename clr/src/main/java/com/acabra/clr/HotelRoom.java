@@ -1,19 +1,19 @@
-package com.acabra.webapp.model;
+package com.acabra.clr;
 
-public class Room {
+public class HotelRoom {
     private long id;
     private String number;
     private String name;
     private String info;
 
-    public Room(long id, String number, String name, String info) {
+    public HotelRoom(long id, String number, String name, String info) {
         this.id = id;
         this.number = number;
         this.name = name;
         this.info = info;
     }
 
-    public Room() {
+    public HotelRoom() {
     }
 
     public long getId() {
